@@ -3,14 +3,8 @@ pipeline {
     stages {
         stage('git'){
             steps{
-                sh 'git clone https://github.com/akash1994sarkar/cp4a-install.git'
+                git credentialsId: 'github', url: 'https://github.com/arun1252/IBMcloud.git' , branch:'master'
             }
         }
-        stage('build') {
-            steps {
-                sh "cd cp4a-install"
-                sh "./cp4a-install.sh"
-            }
-        }
-    }
-}
+		}
+		}
